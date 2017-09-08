@@ -6,13 +6,13 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 16:59:22 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/08 11:22:55 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/08 15:53:11 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_putchar(char c);
+int		ft_putchar(char c);
 
-void ft_print_comb2(void) {
+void	ft_print_comb2(void) {
 
 	int i;
 	int j;

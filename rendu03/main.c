@@ -3,8 +3,8 @@
 
 int main() {
 	char str[12] = "Hello world";
-	char strrev[12] = ft_strrev(str);
+	char *revstr = ft_strrev(str);
 
-	printf("%s\n", strrev);
+	printf("%s\n", revstr);
 	return (0);
 }
