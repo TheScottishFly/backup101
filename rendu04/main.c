@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main() {
-	int i = ft_is_prime(7);
+	int i = ft_is_prime(2147483647);
 
 	printf("%d\n", i);
 	return (0);

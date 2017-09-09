@@ -1,52 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/07 16:44:48 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/09 14:25:02 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/09 08:54:10 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/09 13:25:09 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_putchar(char c);
 
-void	ft_m_putchar(char i, char j, char k)
+void	ft_putnbr(int nb)
 {
-	ft_putchar(i);
-	ft_putchar(j);
-	ft_putchar(k);
-	if(i != '7' || j != '8' || k != '9')
-	{
-		ft_putchar(',');
-		ft_putchar(' ');
-	}
-}
+	int i;
+	char c;
 
-void	ft_print_comb(void)
-{
-	char i;
-	char j;
-	char k;
-
-	i = '0';
-	j = '1';
-	k = '2';
-	while (i <= '7')
+	if (nb < 0)
+		ft_putchar('-');
+	while (nb > 0)
 	{
-		while (j <= '8')
-		{
-			while (k <= '9')
-			{
-				ft_m_putchar(i, j, k);
-				k++;
-			}
-			j++;
-			k = j + 1;
-		}
-		i++;
-		j = i + 1;
-		k = j + 1;
+		i = nb / 10;
+		c
 	}
 }
