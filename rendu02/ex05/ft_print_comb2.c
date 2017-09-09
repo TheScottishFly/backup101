@@ -9,49 +9,49 @@
 /*   Updated: 2017/09/09 14:08:30 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <unistd.h>
 
-int		ft_putchar(char c);
-
-int		ft_m_putchar(char i, char j, char k, char l)
+int		ft_putchar(char c)
 {
-	ft_putchar(i);
-	ft_putchar(j);
-	ft_putchar(' ');
-	ft_putchar(k);
-	ft_putchar(l);
-	ft_putchar(',');
-	ft_putchar(' ');
+	write(1, &c, 1);
 	return (0);
 }
 
-void	ft_print_comb2(void) {
-
-	int i;
-	int j;
-	int k;
-	int l;
-
-	i = '0';
-	j = '0';
-	k = '0';
-	l = '1';
-
-	while(i <= '9') {
-		while(j <= '8') {
-			while(k <= '9') {
-				while(l <= '9') {
-					ft_m_putchar(i, j, k, l);
-				}
-					l++;
-				}
-				l = i;
-				k++;
-			};
-			k = j;
-			j++;
-		}
-		j = '0';
-		i++;
+int ft_m_putchar(char *numbers)
+{
+	ft_putchar('0' + numbers[0] / 10);
+	ft_putchar('0' + numbers[0] % 10);
+	ft_putchar(' ');
+	ft_putchar('0' + numbers[1] / 10);
+	ft_putchar('0' + numbers[1] % 10);
+	if (numbers[0] != 98 && numbers[1] <= 99)
+	{
+		ft_putchar(',');
+		ft_putchar(' ');
 	}
 }
 
+void	ft_print_comb2(void)
+{
+	char numbers[2];
+
+	while(numbers[0] != 99 && numbers[1] <= 99)
+	{
+		numbers[1]++;
+		if (numbers[1] > 99)
+		{
+			numbers[1] = 0;
+			numbers[0]++;
+		}
+		if (numbers[0] < numbers[1])
+		{
+			ft_m_putchar(numbers);
+		}
+	}
+}
+
+int		main(void)
+{
+	ft_print_comb2();
+	return (0);
+}
