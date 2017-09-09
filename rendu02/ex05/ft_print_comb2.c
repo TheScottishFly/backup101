@@ -9,13 +9,8 @@
 /*   Updated: 2017/09/09 14:08:30 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
-int		ft_putchar(char c)
-{
-	write(1, &c, 1);
-	return (0);
-}
+int		ft_putchar(char c);
 
 int ft_m_putchar(char *numbers)
 {
@@ -48,10 +43,4 @@ void	ft_print_comb2(void)
 			ft_m_putchar(numbers);
 		}
 	}
-}
-
-int		main(void)
-{
-	ft_print_comb2();
-	return (0);
 }
