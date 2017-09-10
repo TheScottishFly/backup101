@@ -44,24 +44,24 @@ void left_right(int x, int y, char middle)
 	}
 }
 
-void rush(int x, int y)
+void rush(int x, int y, char left, char middle, char right)
 {
 	if (x == 1)
 	{
-		ft_putchar('/');
+		ft_putchar(left);
 		ft_putchar('\n');
 	}
 	else
-		top_bottom(x, '/', '*', '\\');
+		top_bottom(x, left, middle, right);
 	if (y > 2)
-		left_right(x, y, '*');
+		left_right(x, y, middle);
 	if (x == 1 && y > 2)
 	{
-		ft_putchar('\\');
+		ft_putchar(right);
 		ft_putchar('\n');
 	}
 	else if (x > 1 && y > 2)
-		top_bottom(x, '\\', '*', '/');
+		top_bottom(x, right, middle, left);
 }
 
 int main(int argc, char *argv[])
@@ -71,6 +71,6 @@ int main(int argc, char *argv[])
 
 	a = *argv[1] - '0';
 	b = *argv[2] - '0';
-	rush(a, b);
+	rush(a, b, *argv[3], *argv[4], *argv[5]);
 	return (0);
 }
