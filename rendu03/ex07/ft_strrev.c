@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 10:12:44 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/08 16:14:15 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/10 07:45:43 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ int		ft_strlen(char *str)
 
 char	*ft_strrev(char *str)
 {
-	int i;
-	int j;
-	char temp;
+	int		i;
+	int		j;
+	char	temp;
 
 	i = 0;
 	j = ft_strlen(str) - 1;

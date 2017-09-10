@@ -1,10 +1,25 @@
-char *ft_strncpy(char *dest, char *src, size_t n) {
-	int i = 0;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/10 07:08:34 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/10 07:15:31 by grosnet-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	while(i < n && src[i] != '\0') {
+char	*ft_strncpy(char *dest, char *src, size_t n)
+{
+	int i;
+
+	i = 0;
+	while (i < n && src[i] != '\0')
+	{
 		dest[i] = src[i];
 		i++;
 	}
 	dest[i] = '\0';
-	return dest;
+	return (dest);
 }

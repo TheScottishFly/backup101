@@ -1,9 +1,24 @@
-char *ft_strcpy(char *dest, char *src) {
-	int i = 0;
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/10 07:08:19 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/10 07:14:44 by grosnet-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-	while(src[i]) {
+char	*ft_strcpy(char *dest, char *src)
+{
+	int i;
+
+	i = 0;
+	while (src[i])
+	{
 		dest[i] = src[i];
 		i++;
 	}
-	return dest;
+	return (dest);
 }

@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 16:44:48 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/09 14:25:02 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/10 06:59:43 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_m_putchar(char i, char j, char k)
 	ft_putchar(i);
 	ft_putchar(j);
 	ft_putchar(k);
-	if(i != '7' || j != '8' || k != '9')
+	if (i != '7' || j != '8' || k != '9')
 	{
 		ft_putchar(',');
 		ft_putchar(' ');
