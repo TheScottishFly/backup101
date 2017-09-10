@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
 int		ft_atoi(char *str)
 {
 	int		i;
@@ -27,16 +25,9 @@ int		ft_atoi(char *str)
 	{
 		if (str[i] != '-')
 			result = result * 10 + (str[i] - '0');
-			printf("%d\n", result);
 		i++;
 	}
 	if (str[0] == '-')
 		result *= -1;
 	return (result);
-}
-
-int		main()
-{
-	printf("%d\n", ft_atoi("-15999999"));
-	return (0);
 }
