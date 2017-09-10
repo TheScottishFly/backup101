@@ -6,11 +6,32 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 16:25:14 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/08 16:26:57 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/10 08:55:16 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_atoi(char *str)
+int		ft_atoi(char *str)
 {
-	
+	int		i;
+	int		len;
+	int		result;
+
+	i = 0;
+	result = 0;
+	len = 0;
+	while (str[i] != '\0')
+	{
+		len++;
+		i++;
+	}
+	i = 0;
+	while (i <= len)
+	{
+		if (str[i] != '-')
+			result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	if (str[0] == '-')
+		result *= -1;
+	return (result);
 }
