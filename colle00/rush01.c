@@ -51,7 +51,7 @@ void rush(int x, int y)
 		ft_putchar('/');
 		ft_putchar('\n');
 	}
-	else
+	else if (x > 1)
 		top_bottom(x, '/', '*', '\\');
 	if (y > 2)
 		left_right(x, y, '*');
@@ -66,6 +66,6 @@ void rush(int x, int y)
 
 int main(void)
 {
-	rush(5, 5);
+	rush(0, 0);
 	return (0);
 }
