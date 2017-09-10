@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/10 07:08:19 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/10 18:38:31 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/07 17:12:18 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/08 07:56:32 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+void	ft_putstr(char *str)
 {
 	int i;
 
 	i = 0;
-	while (src[i])
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
-		i++;
+		ft_putchar(str[i]);
+		str++;
 	}
-	return (dest);
 }

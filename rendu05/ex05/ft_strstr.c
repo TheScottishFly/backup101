@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/10 07:08:54 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/10 07:48:03 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/10 18:40:19 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,6 @@ char	*ft_strstr(char *str, char *subsearch)
 		adv_str++;
 	}
 	if (adv_sub == size_sub)
-		return (str[begin_sub]);
+		return (&str[begin_sub]);
 	return (NULL);
 }

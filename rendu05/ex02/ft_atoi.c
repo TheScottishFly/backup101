@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/10 07:08:19 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/10 18:38:31 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/08 16:25:14 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/10 08:55:16 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+int		ft_atoi(char *str)
 {
-	int i;
+	int		i;
+	int		len;
+	int		result;
 
 	i = 0;
-	while (src[i])
+	result = 0;
+	len = 0;
+	while (str[i] != '\0')
 	{
-		dest[i] = src[i];
+		len++;
 		i++;
 	}
-	return (dest);
+	i = 0;
+	while (i <= len)
+	{
+		if (str[i] != '-')
+			result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	if (str[0] == '-')
+		result *= -1;
+	return (result);
 }

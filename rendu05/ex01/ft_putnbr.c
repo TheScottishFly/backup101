@@ -1,24 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/10 07:08:19 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/10 18:38:31 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/09 08:54:10 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/10 18:05:55 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
-{
-	int i;
+int		ft_putchar(char c);
 
-	i = 0;
-	while (src[i])
+void	ft_putnbr(int nb)
+{
+	if (nb < 0)
 	{
-		dest[i] = src[i];
-		i++;
+		ft_putchar('-');
+		nb *= -1;
 	}
-	return (dest);
+	if (nb < 10 && nb > -10)
+		ft_putchar('0' + nb);
+	else if (nb == -2147483648)
+	{
+		ft_putchar('2');
+		nb = 147483648;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
 }

@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/10 07:08:19 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/10 18:38:31 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/10 07:09:19 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/10 18:39:59 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *dest, char *src)
+int		ft_strncmp(char *s1, char *s2)
 {
 	int i;
 
 	i = 0;
-	while (src[i])
+	while (s1[i] || s2[i])
 	{
-		dest[i] = src[i];
+		if (s1[i] < s2[i])
+			return (-1);
+		else if (s1[i] > s2[i])
+			return (1);
 		i++;
 	}
-	return (dest);
+	return (0);
 }
