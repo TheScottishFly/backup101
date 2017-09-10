@@ -64,8 +64,13 @@ void rush(int x, int y)
 		top_bottom(x, '\\', '*', '/');
 }
 
-int main(void)
+int main(int argc, char *argv[])
 {
-	rush(5, 5);
+	int		a;
+	int		b;
+
+	a = *argv[1] - '0';
+	b = *argv[2] - '0';
+	rush(a, b);
 	return (0);
 }
