@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/09 08:54:10 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/09 13:25:09 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/10 17:13:54 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,16 @@ void	ft_putnbr(int nb)
 	if (nb < 0)
 	{
 		ft_putchar('-');
-		nb += nb * -2;
+		nb *= -1;
 	}
-	if (nb < 10)
+	if (nb < 10 && nb > -10)
 		ft_putchar('0' + nb);
-	else
+	else if (nb == -2147483648)
+	{
+		ft_putchar('2');
+		nb = 147483648;
+	}
+	if (nb > 10)
 	{
 		ft_putnbr(nb / 10);
 		ft_putnbr(nb % 10);
