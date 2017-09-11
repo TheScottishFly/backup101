@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 10:15:35 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 15:03:18 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/10 07:09:19 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/10 07:16:11 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcapitalize(char *str)
+int		ft_strcmp(char *s1, char *s2)
 {
 	int i;
 
 	i = 0;
-	while (str[i])
+	while (s1[i] || s2[i])
 	{
-		if (i == 0 || str[i - 1] == ' ')
-		{
-			if (str[i] >= 'a' && str[i] <= 'z')
-				str[i] = str[i] - 32;
-		}
+		if (s1[i] < s2[i])
+			return (-1);
+		else if (s1[i] > s2[i])
+			return (1);
 		i++;
 	}
-	return (str);
+	return (0);
 }

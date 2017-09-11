@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 10:15:35 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 15:03:18 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/07 17:12:31 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/08 07:58:14 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcapitalize(char *str)
+int		ft_strlen(char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i])
-	{
-		if (i == 0 || str[i - 1] == ' ')
-		{
-			if (str[i] >= 'a' && str[i] <= 'z')
-				str[i] = str[i] - 32;
-		}
+	while (str[i] != '\0')
 		i++;
-	}
-	return (str);
+	return (i);
 }

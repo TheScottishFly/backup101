@@ -6,9 +6,24 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 16:25:14 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 13:01:17 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/11 15:54:53 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+int		begin_by_letter(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '-' && (str[i] <= 48 || str[i] >= 57))
+	{
+		if (str[i] != '-' && str[i] <= 32)
+			i++;
+		else if ((str[i] >= 33 && str[i] <= 48 && str[i] != '-') || (str[i] >= 57))
+			return (0);
+	}
+	return (i);
+}
 
 int		ft_strlen(char *str)
 {
@@ -27,11 +42,11 @@ int		ft_atoi(char *str)
 	int		len;
 	int		result;
 
-	j = 0;
 	len = ft_strlen(str);
 	result = 0;
-	while (str[j] != '-' && (str[j] <= 48 || str[j] >= 57))
-		j++;
+	j = begin_by_letter(str);
+	if (j == 0 && str[0] <= 48 && str[0] >= 57 && str[0] != '-')
+		return (0);
 	i = j;
 	while ((str[i] == '-') || (str[i] >= 48 && str[i] <= 57))
 	{

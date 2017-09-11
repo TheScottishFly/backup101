@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 10:15:35 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 15:03:18 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/11 14:38:12 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/11 14:38:52 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcapitalize(char *str)
-{
-	int i;
+#include <unistd.h>
 
-	i = 0;
-	while (str[i])
-	{
-		if (i == 0 || str[i - 1] == ' ')
-		{
-			if (str[i] >= 'a' && str[i] <= 'z')
-				str[i] = str[i] - 32;
-		}
-		i++;
-	}
-	return (str);
+void ft_putchar(char c)
+{
+	write(1, &c, 1);
 }
