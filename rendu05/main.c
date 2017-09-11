@@ -3,8 +3,10 @@
 
 int main(void)
 {
-	int i = ft_strcmp("Saluu", "Salut"); // A modifier par la fonction a tester
+	char *str = "Salut";
+	char *up_str = NULL;
 
-	printf("%d\n", i);
+	up_str = ft_strupcase(str);
+	printf("%s", up_str);
 	return (0);
 }

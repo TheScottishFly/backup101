@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/10 07:09:19 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/10 18:39:59 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/11 10:19:19 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/11 10:21:29 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2)
+int		*ft_str_is_lowercase(char *str)
 {
 	int i;
 
 	i = 0;
-	while (s1[i] || s2[i])
+	while (str[i])
 	{
-		if (s1[i] < s2[i])
-			return (-1);
-		else if (s1[i] > s2[i])
-			return (1);
+		if (!(str[i] >= 97 && str[i] <= 122))
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }

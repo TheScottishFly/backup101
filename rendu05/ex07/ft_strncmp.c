@@ -1,34 +1,27 @@
-#include <unistd.h>
-#include <stdio.h>
-
-int	ft_putchar(char c)
-{
-	write(1, &c, 1);
-	return (0);
-}
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/10 07:09:35 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 09:42:20 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/11 08:52:28 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/11 08:52:30 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
+int		ft_strncmp(char *s1, char *s2)
 {
 	int i;
-	char letter;
 
 	i = 0;
-	while (str[i])
+	while (s1[i] || s2[i])
 	{
-		letter = str[i];
-		str[i] = str[i] - 32;
+		if (s1[i] < s2[i])
+			return (-1);
+		else if (s1[i] > s2[i])
+			return (1);
 		i++;
 	}
-	return (str);
+	return (0);
 }
