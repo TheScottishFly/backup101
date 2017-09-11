@@ -6,11 +6,11 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 17:12:18 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 15:41:05 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/11 18:08:29 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_putchar(char n);
+int		ft_putchar(char n);
 
 void	ft_putstr(char *str)
 {

@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 16:25:14 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 15:54:53 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/11 18:08:57 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int		begin_by_letter(char *str)
 	{
 		if (str[i] != '-' && str[i] <= 32)
 			i++;
-		else if ((str[i] >= 33 && str[i] <= 48 && str[i] != '-') || (str[i] >= 57))
+		else if ((str[i] >= 33 && str[i] <= 48 && str[i] != '-')
+				|| (str[i] >= 57))
 			return (0);
 	}
 	return (i);
