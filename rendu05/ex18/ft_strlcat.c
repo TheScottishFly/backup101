@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 10:57:21 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 12:20:52 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/11 13:21:54 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		ft_strlen(char *str)
 	return (i);
 }
 
-unsigned int	*ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	int		i;
 	int		length;
