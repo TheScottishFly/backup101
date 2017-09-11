@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 10:57:21 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 17:22:03 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/11 17:31:42 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/11 17:34:58 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strlen(char *str)
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int main(int argc, char *argv[])
 {
 	int i;
 
 	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	int		i;
-	int		length;
-
-	i = 0;
-	length = ft_strlen(dest);
-	if (length < size)
-		return (length);
-	while (src[i] && i < (size - length))
+	while(argv[0][0])
 	{
-		dest[length + i] = src[i];
+		ft_putchar(argv[0][i]);
 		i++;
 	}
-	dest[length + i] = '\0';
-	return (length + i);
+	(void)argc;
+	return (0);
 }

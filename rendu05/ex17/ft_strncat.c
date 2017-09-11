@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 10:50:49 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 11:02:48 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/11 17:21:46 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strncat(char *dest, char *src, int nb)
 	int		length;
 
 	length = ft_strlen(dest);
-	while (src[i] && i <= (nb-1))
+	while (src[i] && i <= (nb - 1))
 	{
 		dest[length + i] = src[i];
 		i++;
