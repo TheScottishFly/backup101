@@ -3,10 +3,6 @@
 
 int main(void)
 {
-	char *str = "Salut";
-	char *up_str = NULL;
-
-	up_str = ft_strupcase(str);
-	printf("%s", up_str);
+	printf("%d\n", ft_atoi("-2147483648"));
 	return (0);
 }
