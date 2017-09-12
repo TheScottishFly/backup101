@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 15:27:26 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/12 15:35:52 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/12 18:34:16 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,25 @@ int		ft_strcmp(char *s1, char *s2)
 	return (0);
 }
 
-void	ft_sort_integer_table(char *argv[], int size)
+void	ft_sort_str_table(char *argv[], int size)
 {
+	int		swap;
 	int		i;
 	int		j;
-	int		temp;
+	char	*temp;
 
 	i = 0;
 	while (i < (size - 1))
 	{
-		j = 0;
+		j = 1;
 		while (j < (size - 1))
 		{
-			if (tab[j] > tab[j + 1])
+			swap = ft_strcmp(argv[j], argv[j + 1]);
+			if (swap == -1)
 			{
-				temp = tab[j];
-				tab[j] = tab[j + 1];
-				tab[j + 1] = temp;
+				temp = argv[j];
+				argv[j] = argv[j + 1];
+				argv[j + 1] = temp;
 			}
 			j++;
 		}
@@ -64,6 +66,7 @@ int		main(int argc, char *argv[])
 
 	i = argc - 1;
 	j = 0;
+	ft_sort_str_table(argv, argc);
 	while (i > 0)
 	{
 		while (argv[i][j])
