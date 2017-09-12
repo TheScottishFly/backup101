@@ -6,16 +6,16 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 08:52:28 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 08:52:30 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/12 08:16:19 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strncmp(char *s1, char *s2)
+int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	int i;
 
 	i = 0;
-	while (s1[i] || s2[i])
+	while ((s1[i] || s2[i]) && i < n)
 	{
 		if (s1[i] < s2[i])
 			return (-1);
