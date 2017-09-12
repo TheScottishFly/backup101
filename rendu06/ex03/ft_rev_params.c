@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
+/*   ft_rev_params.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/11 10:15:35 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/12 15:10:38 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/12 14:08:07 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/12 15:26:10 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-char	*ft_strcapitalize(char *str)
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+int		main(int argc, char *argv[])
 {
 	int i;
+	int j;
 
-	i = 0;
-	while (str[i])	
+	i = argc - 1;
+	j = 0;
+	while (i > 0)
 	{
-		if (i == 0 || (!((str[i - 1] >= 48 && str[i - 1] <= 57) ||
-						(str[i - 1] >= 65 && str[i - 1] <= 90) ||
-						(str[i - 1] >= 97 && str[i - 1] <= 122))) &&
-				str[i] >= 'a' && str[i] <= 'z')
-			str[i] = str[i] - 32;
-		i++;
+		while (argv[i][j])
+		{
+			ft_putchar(argv[i][j]);
+			j++;
+		}
+		ft_putchar('\n');
+		j = 0;
+		i--;
 	}
-	return (str);
+	return (0);
 }
