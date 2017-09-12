@@ -6,24 +6,9 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/10 18:20:27 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/10 18:20:32 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/12 07:35:06 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-
-int		ft_sqrt(int nb)
-{
-	int i;
-
-	i = 0;
-	while (i * i < nb)
-		i++;
-	if (nb % i == 0)
-		return (i);
-	else
-		return (0);
-}
 
 int		ft_is_prime(int nb)
 {
@@ -45,10 +30,4 @@ int		ft_is_prime(int nb)
 		i += 2;
 	}
 	return (1);
-}
-
-int main()
-{
-	printf("%d\n", ft_is_prime(2147483629));
-	return (0);
 }

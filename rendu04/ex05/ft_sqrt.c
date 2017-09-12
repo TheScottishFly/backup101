@@ -6,22 +6,22 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/07 17:39:52 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 17:13:58 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/12 07:34:33 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_sqrt(int nb)
 {
-	if (nb <= 0)
-		return (0);
 	int i;
 
 	i = 0;
+	if (nb <= 0)
+		return (0);
 	while (i * i < nb)
 		if (i + 1 * i + 1 < nb)
 			i++;
 		else
-			break;
+			break ;
 	if (nb % i == 0)
 		return (i);
 	else
