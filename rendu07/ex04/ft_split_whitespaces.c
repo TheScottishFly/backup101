@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 08:50:27 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/13 10:25:19 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/13 12:09:23 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,19 @@ int		pt_tab_len(char *str)
 
 	i = 0;
 	j = 0;
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] != ' ' && str[i] != '\n' && str[i] != '\t')
 		{
 			if (str[i - 1] == ' ' || str[i - 1] == '\n' || str[i - 1] == '\t')
 				j++;
-			i++;
 		}
-		else
-			i++;
+		i++;
 	}
 	return (j + 1);
 }
 
-int		*value_tab(char *str)
+int		*define_value_tab(char *str)
 {
 	int		*tab;
 	int		i;
@@ -42,51 +40,62 @@ int		*value_tab(char *str)
 	int		k;
 
 	i = 0;
-	j= 0;
+	j = 0;
 	k = 0;
-	tab = malloc(pt_tab_len(str) * sizeof(int));
+	tab = malloc(pt_tab_len(str) + 1 * sizeof(int));
 	tab[k] = pt_tab_len(str);
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] != ' ' && str[i] != '\n' && str[i] != '\t')
-		{
-			if (str[i - 1] == ' ' || str[i - 1] == '\n' || str[i - 1] == '\t')
-				j++;
-		}
+			j++;
 		else
 		{
-			tab[k++] = j;
+			k++;
+			tab[k] = j;
 			j = 0;
 		}
 		i++;
 	}
+	k++;
+	tab[k] = j;
 	return (tab);
 }
 
 char	**ft_split_whitespaces(char *str)
 {
 	char	**pt_tab;
-	int		length_tab;
+	int		*values_tab;
 	int		i;
 	int		j;
+	int		k;
 
-	i = 0;
-	j = 0;
-	length_tab = pt_tab_len(str);
-	pt_tab = malloc(length_tab * sizeof(char));
-	while (length_tab > 0)
+	i = -1;
+	j = -1;
+	k = 0;
+	values_tab = define_value_tab(str);
+	pt_tab = malloc((values_tab[0] + 1) * sizeof(char));
+	while (j++ < (values_tab[0] - 1))
 	{
-		while (str[i])
+		pt_tab[j] = malloc(values_tab[j + 1] * sizeof(char));
+		while (str[i++])
 		{
-			if (str[i] != ' ' && str[i] != '\n' && str[i] == '\t')
+			if (str[i] == ' ' || str[i] == '\n' || str[i] == '\t')
+			{
+				k = 0;
 				break ;
+			}
+			else
+				pt_tab[j][k] = str[i];
 		}
 	}
+	pt_tab[j++] = 0;
 	return (pt_tab);
 }
 
-int main()
+int		main()
 {
-	printf("%d\n", pt_tab_len("Hello-all world !qqq flfff1514 35437 +"));
+	char **test = ft_split_whitespaces("test tes test tes te");
+	for (int i = 0; i < 6; i++)
+		printf("%s\n", test[i]);
 	return (0);
 }
