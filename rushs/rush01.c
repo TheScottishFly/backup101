@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 18:29:01 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 18:44:25 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/13 07:37:05 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,15 +61,9 @@ void	rush(int x, int y)
 		top_bottom(x, '/', '*', '\\');
 	if (y > 2)
 		left_right(x, y, '*');
-	if (x == 1 && y > 2)
+	if (x == 1 && y == 2)
 	{
 		ft_putchar('\\');
-		ft_putchar('\n');
-	}
-	else if (x == 2 && y == 2)
-	{
-		ft_putchar('\\');
-		ft_putchar('/');
 		ft_putchar('\n');
 	}
 	if (x > 1 && y > 2)
