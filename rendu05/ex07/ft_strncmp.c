@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 08:52:28 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/12 08:16:19 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/13 16:00:17 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ int		ft_strncmp(char *s1, char *s2, unsigned int n)
 	while ((s1[i] || s2[i]) && i < n)
 	{
 		if (s1[i] < s2[i])
-			return (-1);
+			return (s1[i] - s2[i]);
 		else if (s1[i] > s2[i])
-			return (1);
+			return (s1[i] - s2[i]);
 		i++;
 	}
 	return (0);
