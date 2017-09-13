@@ -6,53 +6,56 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 20:23:11 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/12 20:30:35 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/13 08:46:44 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int		ft_argvlen(argc, **argv)
+int		ft_argvlen(char **argv)
 {
-	int i;
-	int j;
-	int total_length;
+	int		i;
+	int		j;
+	int		k;
 
 	i = 1;
 	j = 0;
-	total_length = 0;
-	while (i <= argc)
+	k = 0;
+	while (argv[i])
 	{
-		while (argv[i][j])
-			j++;
+		while (argv[i][k])
+			k++;
 		i++;
-		j++;
+		j += k + 1;
+		k = 0;
 	}
 	return (j - 1);
 }
 
 char	*ft_concat_params(int argc, char **argv)
 {
-	int i;
-	int j;
-	int k;
-	char *str;
+	int		i;
+	int		j;
+	int		k;
+	char	*str;
 
 	i = 1;
-	j = 0;
 	k = 0;
-	str = malloc(ft_argvlen(argc, argv) * sizeof(char));
-	while (i <= argc)
+	str = malloc(ft_argvlen(argv) * sizeof(char));
+	while (argv[i])
 	{
+		j = 0;
 		while (argv[i][j])
 		{
 			str[k] = argv[i][j];
 			k++;
+			j++;
 		}
 		i++;
-		j = 0;
-		str[k++] = '\n';
+		str[k] = '\n';
 		k++;
 	}
+	str[k] = '\0';
+	(void)argc;
 	return (str);
 }
