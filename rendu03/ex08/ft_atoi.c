@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/08 16:25:14 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/13 07:21:29 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/13 07:25:29 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,11 @@ int		ft_atoi(char *str)
 	if ((str[i] == '-' || str[i] == '+') &&
 			(str[i + 1] == '-' || str[i + 1] == '+'))
 		return (0);
-	while (str[i] == '-' || str[i] == '+' || (str[i] >= 48 && str[i] <= 57))
+	else if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= 48 && str[i] <= 57)
 	{
-		if (str[i] >= 48 && str[i] <= 57)
-			result = result * 10 + (str[i] - '0');
+		result = result * 10 + (str[i] - '0');
 		i++;
 	}
 	if (str[j] == '-')
