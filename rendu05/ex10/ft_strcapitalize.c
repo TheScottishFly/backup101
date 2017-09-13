@@ -6,15 +6,16 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 10:15:35 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/12 15:10:38 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/13 14:18:02 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 char	*ft_strcapitalize(char *str)
 {
 	int i;
 
 	i = 0;
-	while (str[i])	
+	while (str[i])
 	{
 		if (i == 0 || (!((str[i - 1] >= 48 && str[i - 1] <= 57) ||
 						(str[i - 1] >= 65 && str[i - 1] <= 90) ||
