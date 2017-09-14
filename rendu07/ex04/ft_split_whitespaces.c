@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 08:50:27 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/13 12:09:23 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/14 13:03:12 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,27 +65,28 @@ char	**ft_split_whitespaces(char *str)
 {
 	char	**pt_tab;
 	int		*values_tab;
-	int		i;
 	int		j;
 	int		k;
 
-	i = -1;
 	j = -1;
 	k = 0;
 	values_tab = define_value_tab(str);
 	pt_tab = malloc((values_tab[0] + 1) * sizeof(char));
-	while (j++ < (values_tab[0] - 1))
+	while (j++ < (values_tab[0]))
 	{
-		pt_tab[j] = malloc(values_tab[j + 1] * sizeof(char));
-		while (str[i++])
+		if (*str != ' ' && *str != '\n' && *str != '\t')
+			pt_tab[j] = malloc(values_tab[j + 1] * sizeof(char));
+		while (*str)
 		{
-			if (str[i] == ' ' || str[i] == '\n' || str[i] == '\t')
+			if (*str == ' ' || *str == '\n' || *str == '\t')
 			{
 				k = 0;
+				str++;
 				break ;
 			}
 			else
-				pt_tab[j][k] = str[i];
+				pt_tab[j][k++] = *str;
+			str++;
 		}
 	}
 	pt_tab[j++] = 0;
