@@ -6,11 +6,11 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 10:16:01 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/12 15:12:42 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/14 15:34:34 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		*ft_str_is_alpha(char *str)
+int		ft_str_is_alpha(char *str)
 {
 	int i;
 

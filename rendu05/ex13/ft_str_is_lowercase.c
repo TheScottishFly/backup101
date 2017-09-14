@@ -6,11 +6,11 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 10:19:19 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 10:21:29 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/14 15:34:56 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		*ft_str_is_lowercase(char *str)
+int		ft_str_is_lowercase(char *str)
 {
 	int i;
 

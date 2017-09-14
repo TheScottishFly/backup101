@@ -6,11 +6,11 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 10:16:10 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 10:21:42 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/14 15:35:02 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		*ft_str_is_uppercase(char *str)
+int		ft_str_is_uppercase(char *str)
 {
 	int i;
 

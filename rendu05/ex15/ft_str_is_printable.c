@@ -6,11 +6,11 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 10:23:30 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/11 10:29:20 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/14 15:34:05 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		*ft_str_is_printable(char *str)
+int		ft_str_is_printable(char *str)
 {
 	int i;
 

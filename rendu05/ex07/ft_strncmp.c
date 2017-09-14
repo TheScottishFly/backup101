@@ -6,13 +6,13 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/11 08:52:28 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/13 16:00:17 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/14 14:36:46 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
 	while ((s1[i] || s2[i]) && i < n)
