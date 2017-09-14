@@ -13,89 +13,86 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int		pt_tab_len(char *str)
+int		is_separator(char c)
 {
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	while (str[i])
-	{
-		if (str[i] != ' ' && str[i] != '\n' && str[i] != '\t')
-		{
-			if (str[i - 1] == ' ' || str[i - 1] == '\n' || str[i - 1] == '\t')
-				j++;
-		}
-		i++;
-	}
-	return (j + 1);
+	if (c != ' ' && c != '\n' && c != '\t')
+		return (0);
+	return (1);
 }
 
-int		*define_value_tab(char *str)
+int		position_next_word(char *str, int position)
 {
-	int		*tab;
-	int		i;
-	int		j;
-	int		k;
+	while (is_separator(str[position]) == 1)
+		position++;
+	return (position);
+}
+
+int		get_length_next_word(char *str)
+{
+	int i;
+	int j;
 
 	i = 0;
 	j = 0;
-	k = 0;
-	tab = malloc(pt_tab_len(str) + 1 * sizeof(int));
-	tab[k] = pt_tab_len(str);
+	while (is_separator(str[j]) == 1)
+		j++;
+	while (is_separator(str[j + i]) == 0)
+		i++;
+	return (i + 1);
+}
+
+int		get_count_words(char *str)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
 	while (str[i])
 	{
-		if (str[i] != ' ' && str[i] != '\n' && str[i] != '\t')
+		if (i == 0 && is_separator(str[i]) == 0)
 			j++;
-		else
-		{
-			k++;
-			tab[k] = j;
-			j = 0;
-		}
+		else if (i != 0 && is_separator(str[i]) == 0 &&
+				is_separator(str[i - 1]) == 1)
+			j++;
 		i++;
 	}
-	k++;
-	tab[k] = j;
-	return (tab);
+	return (j);
 }
 
 char	**ft_split_whitespaces(char *str)
 {
 	char	**pt_tab;
-	int		*values_tab;
+	int		i;
 	int		j;
-	int		k;
+	int k;
 
-	j = -1;
+	i = 0;
+	j = 0;
 	k = 0;
-	values_tab = define_value_tab(str);
-	pt_tab = malloc((values_tab[0] + 1) * sizeof(char));
-	while (j++ < (values_tab[0]))
+	pt_tab = malloc((get_count_words(str) + 1) * sizeof(char*));
+	while (i <= get_count_words(str))
 	{
-		if (*str != ' ' && *str != '\n' && *str != '\t')
-			pt_tab[j] = malloc(values_tab[j + 1] * sizeof(char));
-		while (*str)
+		pt_tab[i] = malloc((get_length_next_word(str) + 1) * sizeof(char));
+		k = position_next_word(str, k);
+		while (is_separator(str[k]) == 0)
 		{
-			if (*str == ' ' || *str == '\n' || *str == '\t')
-			{
-				k = 0;
-				str++;
-				break ;
-			}
-			else
-				pt_tab[j][k++] = *str;
-			str++;
+			pt_tab[i][j] = str[k];
+			j++;
+			k++;
 		}
+		pt_tab[i][j] = '\0';
+		i++;
+		j = 0;
 	}
-	pt_tab[j++] = 0;
+	pt_tab[i] = malloc(1 * sizeof(int));
+	pt_tab[i][j] = 0;
 	return (pt_tab);
 }
 
 int		main()
 {
-	char **test = ft_split_whitespaces("test tes test tes te");
+	char **test = ft_split_whitespaces("    test    tes    test tes te");
 	for (int i = 0; i < 6; i++)
 		printf("%s\n", test[i]);
 	return (0);
