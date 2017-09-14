@@ -6,16 +6,11 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 14:01:04 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/12 14:04:45 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/14 07:08:50 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+void	ft_putchar(char c);
 
 int		main(int argc, char *argv[])
 {
