@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/10 07:08:54 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/14 15:38:10 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/15 14:34:57 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,28 +22,28 @@ int		ft_strlen(char *str)
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	int		adv_str;
 	int		adv_sub;
-	int		begin_sub;
+	char	*begin_sub;
 	int		size_sub;
 
-	adv_str = 0;
 	adv_sub = 0;
-	begin_sub = 0;
 	size_sub = ft_strlen(to_find);
-	while (str[adv_str])
+	while (*str)
 	{
-		if (to_find[adv_sub] == str[adv_str])
+		if (to_find[adv_sub] == *str)
 		{
 			if (adv_sub == 0)
-				begin_sub = adv_str;
+				begin_sub = str;
 			adv_sub++;
 		}
 		else if (adv_sub > 0 && adv_sub < size_sub)
+		{
 			adv_sub = 0;
-		adv_str++;
+			str = begin_sub + 1;
+		}
+		str++;
 	}
 	if (adv_sub == size_sub)
-		return (&str[begin_sub]);
+		return (begin_sub);
 	return (0);
 }
