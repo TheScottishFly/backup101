@@ -1,22 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.h                                               :+:      :+:    :+:   */
+/*   ft_stock_par.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/15 14:55:34 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/15 14:56:06 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/15 15:40:32 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/15 16:08:47 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_H
-# define FT_H
+#ifndef FT_STOCK_PAR_H
+# define FT_STOCK_PAR_H
 
-void	ft_putchar(char c);
-void	ft_swap(int *a, int *b);
-void	ft_putstr(char *str);
-int		ft_strlen(char *str);
-int		ft_strcmp(char *s1, char *s2);
+typedef struct	s_stock_par
+{
+	int		size_param;
+	char	*str;
+	char	*copy;
+	char	**tab;
+}				t_stock_par;
 
 #endif
