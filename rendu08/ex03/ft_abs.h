@@ -6,13 +6,13 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 12:20:05 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/15 12:21:18 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/15 13:34:29 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 # define FT_ABS_H
 
-# define ABS(Value) if (Value < 0) return (Value *= -1); else return (Value);
+# define ABS(Value) ((Value < 0) ? (Value * -1) : (Value))
 
 #endif
