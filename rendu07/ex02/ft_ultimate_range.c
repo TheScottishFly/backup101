@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 20:15:02 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/12 20:20:06 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/15 15:12:18 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int		ft_ultimate_range(int **range, int min, int max)
 	i = 0;
 	if (min >= max)
 	{
-		range = NULL;
+		range = 0;
 		return (range);
 	}
 	range = malloc((max - min) * sizeof(int));
-	if (range == NULL)
+	if (range == 0)
 		return (0);
 	while (min < max)
 	{
