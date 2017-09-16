@@ -1,6 +1,6 @@
-$nb_lines = ifconfig | grep "inet " | sed "s/.*inet //g" | cut -d' ' -f1 | wc -l
+NB_LINES=$(ifconfig | grep "inet " | sed "s/.*inet //g" | cut -d' ' -f1 | wc -l)
 
-if [ $nb_lines > "0" ]
+if [ "$NB_LINES" -gt "0" ]
 then
 	ifconfig | grep "inet " | sed "s/.*inet //g" | cut -d' ' -f1
 else
