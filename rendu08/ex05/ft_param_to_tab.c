@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 15:55:23 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/15 16:35:20 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/15 17:21:39 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ struct s_stock_par	*ft_param_to_tab(int ac, char **av)
 		tab[i].str = av[i];
 		tab[i].copy = ft_strcpy(tab[i].copy, av[i], tab[i].size_param);
 		tab[i].tab = ft_split_whitespaces(tab[i].copy);
-		printf("%s\n", tab[i].tab[0]);
+		printf("%s\n", tab[i].copy);
 		i++;
 	}
 	tab[i].str = 0;

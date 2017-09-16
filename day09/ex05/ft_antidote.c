@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_rot42.c                                         :+:      :+:    :+:   */
+/*   ft_antidote.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/16 08:37:04 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/16 08:37:12 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/16 08:20:32 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/16 08:36:00 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_rot42(char *str)
+int		ft_antidote(int i, int j, int k)
 {
-	while (*str)
-	{
-		*str = *str + (*str * 46) % 26;
-		str++;
-	}
-	return (&str[0]);
+	if ((i < j && i > k) || (i > j && i < k))
+		return (i);
+	else if ((j < i && j > k) || (j > i && j < k))
+		return (j);
+	else if ((k < i && k > j) || (k > i && k < j))
+		return (k);
 }
