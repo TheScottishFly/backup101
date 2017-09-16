@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 16:44:01 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/15 16:52:07 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/16 15:44:48 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_generic(void)
 {
-	write(1, "Tut tut ; Tut tut\n", 18);
+	write(1, "Tut tut; Tut tut\n", 18);
 }
