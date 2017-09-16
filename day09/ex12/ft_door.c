@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/16 11:37:25 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/16 12:09:34 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/16 12:22:25 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,32 @@
 void	ft_putstr(char *str)
 {
 	int i;
-	
+
 	i = 0;
 	while (str[i])
 	{
-		write(1, str, 1);
+		write(1, &str[i], 1);
 		i++;
 	}
 }
 
 int		close_door(t_door *door)
 {
-	ft_putstr("Door closing...");
+	ft_putstr("Door closing...\n");
 	door->state = CLOSE;
 	return (TRUE);
 }
 
 int		open_door(t_door *door)
 {
-	ft_putstr("Door opening...");
+	ft_putstr("Door opening...\n");
 	door->state = OPEN;
 	return (TRUE);
 }
 
 int		is_door_close(t_door *door)
 {
-	ft_putstr("Door is close ?");
+	ft_putstr("Door is close ?\n");
 	if (door->state == CLOSE)
 		return (TRUE);
 	else
@@ -49,7 +49,7 @@ int		is_door_close(t_door *door)
 
 int		is_door_open(t_door *door)
 {
-	ft_putstr("Door is open ?");
+	ft_putstr("Door is open ?\n");
 	if (door->state == OPEN)
 		return (TRUE);
 	else
