@@ -6,16 +6,22 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/16 08:37:04 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/16 08:37:12 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/16 09:10:36 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_rot42(char *str)
 {
-	while (*str)
+	int i;
+
+	i = 0;
+	while (str[i])
 	{
-		*str = *str + (*str * 46) % 26;
-		str++;
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] = 'a' + (str[i] - 'a' + 42) % 26;
+		else if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] = 'A' + (str[i] - 'A' + 42) % 26;
+		i++;
 	}
-	return (&str[0]);
+	return (str);
 }
