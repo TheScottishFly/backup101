@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/16 10:50:20 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/16 11:00:15 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/16 11:31:48 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,25 +46,21 @@ int		main(int argc, char *argv[])
 	int		k;
 	char	copy[250];
 
-	i = 1;
-	j = 0;
-	k = 0;
+	i = 0;
 	while (argv[i])
 	{
+		k = 0;
+		j = 0;
 		while (argv[i][j])
 		{
-			if (argv[i][j] != ' ' && argv[i][j] != '\n' && argv[i][j] != '\t')
-			{
-				copy[k] = argv[i][j];
-				k++;
-			}
+			if (argv[i][j] != ' ' && argv[i][j] != '\n' &&
+					argv[i][j] != '\t')
+				copy[k++] = argv[i][j];
 			j++;
 		}
-		copy[j] = '\0';
+		copy[k] = '\0';
 		if (in_god_we_trust(copy))
 			break ;
-		j = 0;
-		k = 0;
 		i++;
 	}
 	(void)argc;
