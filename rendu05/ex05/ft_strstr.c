@@ -28,7 +28,7 @@ char	*ft_strstr(char *str, char *to_find)
 
 	adv_sub = 0;
 	size_sub = ft_strlen(to_find);
-	if (ft_strlen(to_find) == 0)
+	if (size_sub == 0)
 		return (str);
 	while (*str)
 	{
