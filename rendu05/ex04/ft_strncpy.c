@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/10 07:08:34 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/15 13:40:52 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/17 12:37:40 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = '\0';
+	while (dest[i] != '\0')
+		dest[i++] = '\0';
 	return (dest);
 }
