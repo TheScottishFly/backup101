@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 09:50:44 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/18 10:31:01 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/18 13:47:12 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,17 @@
 
 int		ft_putchar(char c);
 
-void	ft_print_words_table(char **tab)
+int		ft_strlen(char *str);
+{
+	int i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+void	ft_print_words_tables(char **tab)
 {
 	int i;
 	int j;
@@ -23,12 +33,15 @@ void	ft_print_words_table(char **tab)
 	j = 0;
 	while (tab[i] != 0)
 	{
-		while (tab[i][j])
+		if (ft_strlen(tab[i]) > 0)
 		{
-			ft_putchar(tab[i][j]);
-			j++;
+			while (tab[i][j] != '\0')
+			{
+				ft_putchar(tab[i][j]);
+				j++;
+			}
+			ft_putchar('\n');
 		}
-		ft_putchar('\n');
 		i++;
 		j = 0;
 	}
@@ -44,7 +57,10 @@ void	ft_show_tab(struct s_stock_par *par)
 	while (par[i].str != 0)
 	{
 		while (par[i].str[j] != '\0')
-			ft_putchar(par[i].str[j++]);
+		{
+			ft_putchar(par[i].str[j]);
+			j++;
+		}
 		ft_putchar('\n');
 		j = 0;
 		while (par[i].size_param >= 10)
@@ -54,7 +70,7 @@ void	ft_show_tab(struct s_stock_par *par)
 		}
 		ft_putchar(ft_putchar(par[i].size_param + '0'));
 		ft_putchar('\n');
-		ft_print_words_table(par[i].tab);
+		ft_print_words_tables(par[i].tab);
 		i++;
 	}
 }

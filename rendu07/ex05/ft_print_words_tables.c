@@ -6,13 +6,13 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 07:25:11 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/18 09:49:05 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/18 13:22:30 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int		ft_putchar(char c);
 
-void	ft_print_words_table(char **tab)
+void	ft_print_words_tables(char **tab)
 {
 	int i;
 	int j;
