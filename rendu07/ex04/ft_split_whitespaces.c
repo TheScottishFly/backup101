@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 08:50:27 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/15 08:40:34 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/18 08:47:36 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ char	**ft_split_whitespaces(char *str)
 		pt_tab[i++][j] = '\0';
 		j = 0;
 	}
-	pt_tab[i] = malloc(1 * sizeof(char));
-	pt_tab[i][j] = 0;
+	pt_tab[i] = 0;
 	return (pt_tab);
 }

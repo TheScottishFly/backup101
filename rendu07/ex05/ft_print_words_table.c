@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 07:25:11 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/18 08:25:44 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/18 08:47:57 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_print_words_table(char **tab)
 
 	i = 0;
 	j = 0;
-	while (tab[i])
+	while (tab[i] != 0)
 	{
 		while(tab[i][j])
 		{
