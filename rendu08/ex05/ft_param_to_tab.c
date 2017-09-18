@@ -6,11 +6,10 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 15:55:23 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/17 12:33:13 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/18 09:47:45 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <stdlib.h>
 #include "ft_stock_par.h"
 
@@ -54,15 +53,8 @@ struct s_stock_par	*ft_param_to_tab(int ac, char **av)
 		tab[i].str = av[i];
 		tab[i].copy = ft_strcpy(tab[i].copy, av[i], tab[i].size_param);
 		tab[i].tab = ft_split_whitespaces(tab[i].copy);
-		printf("%s\n", tab[i].copy);
 		i++;
 	}
 	tab[i].str = 0;
 	return (tab);
-}
-
-int					main(int argc, char *argv[])
-{
-	t_stock_par *tab;
-	tab = ft_param_to_tab(argc, argv);
 }

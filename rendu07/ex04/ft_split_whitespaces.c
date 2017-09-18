@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/13 08:50:27 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/18 08:47:36 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/18 09:45:17 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		get_length_next_word(char *str)
 	j = 0;
 	while (is_separator(str[j]))
 		j++;
-	while (!(is_separator(str[j + i])))
+	while (!(is_separator(str[j + i])) && str[i + j] != '\0')
 		i++;
 	return (i + 1);
 }
@@ -74,9 +74,9 @@ char	**ft_split_whitespaces(char *str)
 	{
 		pt_tab[i] = malloc((get_length_next_word(str) + 1) * sizeof(char));
 		k = position_next_word(str, k);
-		while (!(is_separator(str[k])))
+		while (!(is_separator(str[k])) && str[k] != '\0')
 			pt_tab[i][j++] = str[k++];
-		pt_tab[i++][j] = '\0';
+		pt_tab[i++][j++] = '\0';
 		j = 0;
 	}
 	pt_tab[i] = 0;
