@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/10 07:08:54 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/17 12:48:26 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/18 07:58:03 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ char	*ft_strstr(char *str, char *to_find)
 	{
 		if (to_find[adv_sub] == *str)
 		{
-			if (adv_sub == 0)
+			if (adv_sub++ == 0)
 				begin_sub = str;
-			adv_sub++;
 		}
 		else if (adv_sub > 0 && adv_sub < size_sub)
 		{
