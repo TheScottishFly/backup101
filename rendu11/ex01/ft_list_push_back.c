@@ -21,6 +21,6 @@ void	ft_list_push_back(t_list **begin_list, void *data)
 
 	new_elem = ft_create_elem(data);
 	while((*begin_list)->next != 0)
-		(*begin_list)++;
+		begin_list++;
 	(*begin_list)->next = new_elem;
 }
