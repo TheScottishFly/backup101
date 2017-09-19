@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.h                                     :+:      :+:    :+:   */
+/*   ft_list_push_front.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/15 15:40:32 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/19 10:45:41 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/19 07:33:58 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/19 09:16:06 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
+#include "ft_list.h"
 
-typedef struct	s_stock_par
+t_list	*ft_create_elem(void *data);
+
+void	ft_list_push_front(t_list **begin_list, void *data)
 {
-	int		size_param;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}				t_stock_par;
+	t_list *new_elem;
 
-char			**ft_split_whitespaces(char *str);
-
-#endif
+	new_elem = ft_create_elem(data);
+	new_elem->next = *begin_list;
+	begin_list = &new_elem;
+}

@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stock_par.h                                     :+:      :+:    :+:   */
+/*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/15 15:40:32 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/19 10:45:41 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/19 07:39:22 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/19 09:15:55 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STOCK_PAR_H
-# define FT_STOCK_PAR_H
+#include "ft_list.h"
 
-typedef struct	s_stock_par
+int		ft_list_size(t_list *begin_list)
 {
-	int		size_param;
-	char	*str;
-	char	*copy;
-	char	**tab;
-}				t_stock_par;
+	int i;
+	t_list *buf;
 
-char			**ft_split_whitespaces(char *str);
-
-#endif
+	i = 0;
+	buf = begin_list;
+	while(buf->next)
+	{
+		i++;
+		buf = buf->next;
+	}
+	i++;
+	return (i);
+}
