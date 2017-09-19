@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_params.c                              :+:      :+:    :+:   */
+/*   ft_list_clear.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/19 09:28:23 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/19 13:22:46 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/19 13:28:16 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/19 13:55:09 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "ft_list.h"
 
-t_list	*ft_create_elem(void *data);
-
-t_list	*ft_list_push_params(int ac, char **av)
+void	ft_list_clear(t_list **begin_list)
 {
-	t_list *first;
-	t_list *cursor;
+	t_list *buf;
+	t_list *next;
 
-	ac--;
-	first = ft_create_elem(&av[ac--]);
-	cursor = first;
-	while (ac > 0)
+	buf = *begin_list;
+	if (buf->next)
 	{
-		cursor->next = ft_create_elem(&av[ac--]);
-		cursor = cursor->next;
+		next = buf->next;
+		ft_list_clear(&next);
 	}
-	return (first);
+	else
+		next = 0;
+	free(buf);
+	*begin_list = 0;
 }

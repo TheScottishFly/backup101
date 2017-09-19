@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_params.c                              :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/19 09:28:23 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/19 13:22:46 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/18 13:58:45 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/18 14:53:07 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-t_list	*ft_create_elem(void *data);
-
-t_list	*ft_list_push_params(int ac, char **av)
+typedef struct	s_list
 {
-	t_list *first;
-	t_list *cursor;
+	void			*data;
+	struct s_list	*next;
 
-	ac--;
-	first = ft_create_elem(&av[ac--]);
-	cursor = first;
-	while (ac > 0)
-	{
-		cursor->next = ft_create_elem(&av[ac--]);
-		cursor = cursor->next;
-	}
-	return (first);
-}
+}				t_list;
+
+#endif
