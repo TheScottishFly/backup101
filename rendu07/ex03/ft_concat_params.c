@@ -39,23 +39,20 @@ char	*ft_concat_params(int argc, char **argv)
 	int		k;
 	char	*str;
 
-	i = 0;
+	i = 1;
 	k = 0;
 	str = malloc(ft_argvlen(argv) * sizeof(char));
-	if (str == NULL)
-		exit(0);
-	while (argv[i++] && i < argc)
+	while (i < argc)
 	{
 		j = 0;
 		while (argv[i][j])
 		{
-			str[k] = argv[i][j];
-			k++;
+			str[k++] = argv[i][j];
 			j++;
 		}
-		if (i + 1 != argc)
-			str[k] = '\n';
-		k++;
+		if (i < argc - 1)
+			str[k++] = '\n';
+		i++;
 	}
 	str[k] = '\0';
 	return (str);
