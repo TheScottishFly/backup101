@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 15:55:23 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/19 10:45:28 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/19 17:11:17 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int					ft_strlen(char *str)
 	int len;
 
 	len = 0;
-	while (str[len++])
-		continue ;
+	while (str[len])
+		len++;
 	return (len);
 }
 
