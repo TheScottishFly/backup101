@@ -16,12 +16,17 @@ void	ft_list_reverse(t_list **begin_list)
 {
 	t_list *buf;
 	t_list *next;
+	t_list *prev;
 
 	buf = *begin_list;
-	if (buf->next)
+	prev = 0;
+	next = 0;
+	while (buf)
 	{
 		next = buf->next;
-		ft_list_reverse(&next);
+		buf->next = prev;
+		prev = buf;
+		buf = next;
 	}
-	buf->next = *begin_list;
+	*begin_list = prev;
 }
