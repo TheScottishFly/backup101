@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_list_at.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 19:39:11 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/19 17:02:24 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/19 13:59:43 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/19 14:56:57 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "ft_list.h"
 
-char	*ft_strdup(char *src)
+t_list	*ft_list_at(t_list *begin_list, unsigned int nbr)
 {
-	int		length;
-	int		i;
-	char	*new_str;
+	unsigned int i;
+	t_list *buf;
 
-	length = 0;
-	i = 0;
-	while (src[length])
-		length++;
-	new_str = malloc((length + 1) * sizeof(char));
-	if (new_str == NULL)
-		exit(0);
-	while (src[i])
+	i = 1;
+	buf = begin_list;
+	while(buf->next && i < nbr)
 	{
-		new_str[i] = src[i];
+		buf = buf->next;
 		i++;
 	}
-	new_str[i] = '\0';
-	return (new_str);
+	if (i != nbr)
+		buf = 0;
+	return (buf);
 }

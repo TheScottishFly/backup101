@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_list_reverse.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 19:39:11 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/19 17:02:24 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/19 15:15:27 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/19 15:17:48 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "ft_list.h"
 
-char	*ft_strdup(char *src)
+void	ft_list_clear(t_list **begin_list)
 {
-	int		length;
-	int		i;
-	char	*new_str;
+	t_list *buf;
+	t_list *next;
 
-	length = 0;
-	i = 0;
-	while (src[length])
-		length++;
-	new_str = malloc((length + 1) * sizeof(char));
-	if (new_str == NULL)
-		exit(0);
-	while (src[i])
+	buf = *begin_list;
+	if (buf->next)
 	{
-		new_str[i] = src[i];
-		i++;
+		next = buf->next;
+		ft_list_clear(&next);
 	}
-	new_str[i] = '\0';
-	return (new_str);
+	buf->next = *begin_list;
 }

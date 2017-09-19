@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/12 19:39:11 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/19 17:02:24 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/18 13:58:45 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/18 14:53:07 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-char	*ft_strdup(char *src)
+typedef struct	s_list
 {
-	int		length;
-	int		i;
-	char	*new_str;
+	void			*data;
+	struct s_list	*next;
 
-	length = 0;
-	i = 0;
-	while (src[length])
-		length++;
-	new_str = malloc((length + 1) * sizeof(char));
-	if (new_str == NULL)
-		exit(0);
-	while (src[i])
-	{
-		new_str[i] = src[i];
-		i++;
-	}
-	new_str[i] = '\0';
-	return (new_str);
-}
+}				t_list;
+
+#endif

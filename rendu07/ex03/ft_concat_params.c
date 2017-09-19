@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 20:23:11 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/13 08:57:29 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/19 17:00:21 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ char	*ft_concat_params(int argc, char **argv)
 			k++;
 			j++;
 		}
-		str[k] = '\n';
+		if (i + 1 != argc)
+			str[k] = '\n';
 		k++;
 	}
 	str[k] = '\0';
-	(void)argc;
 	return (str);
 }
