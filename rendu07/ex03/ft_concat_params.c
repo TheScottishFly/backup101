@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 20:23:11 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/20 07:53:55 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/20 10:44:16 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,22 @@ char	*ft_concat_params(int argc, char **argv)
 	i = 1;
 	k = 0;
 	str = malloc(ft_argvlen(argv) * sizeof(char));
-	while (i < argc)
+	while (argc > 1)
 	{
 		j = 0;
 		while (argv[i][j])
 		{
-			str[k++] = argv[i][j];
+			str[k] = argv[i][j];
 			j++;
+			k++;
 		}
-		if (i < argc - 1)
-			str[k++] = '\n';
+		if (argc > 2)
+			str[k] = '\n';
+		else
+			str[k] = '\0';
 		i++;
+		k++;
+		argc--;
 	}
-	str[k] = '\0';
 	return (str);
 }
