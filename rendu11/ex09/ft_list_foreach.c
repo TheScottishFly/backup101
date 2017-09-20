@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 18:51:38 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/19 18:52:17 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/20 08:18:33 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
 {
-	buf = *begin_list;
-	if (buf->next)
+	t_list *buf;
+
+	buf = begin_list;
+	while (buf->next)
 	{
-		next = buf->next;
-		ft_list_reverse(&next);
+		(*f)(buf->data);
+		buf = buf->next;
 	}
-	buf->next = *begin_list;
+	(*f)(buf->data);
 }

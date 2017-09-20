@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_front.c                               :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/19 07:33:58 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/20 08:01:44 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/18 13:58:45 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/18 14:53:07 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-t_list	*ft_create_elem(void *data);
-
-void	ft_list_push_front(t_list **begin_list, void *data)
+typedef struct	s_list
 {
-	t_list *new_elem;
+	void			*data;
+	struct s_list	*next;
 
-	new_elem = ft_create_elem(data);
-	new_elem->next = *begin_list;
-	*begin_list = new_elem;
-}
+}				t_list;
+
+#endif

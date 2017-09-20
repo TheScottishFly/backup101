@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_front.c                               :+:      :+:    :+:   */
+/*   ft_list_foreach_if.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/19 07:33:58 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/20 08:01:44 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/20 08:25:12 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/20 08:44:43 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	*ft_create_elem(void *data);
-
-void	ft_list_push_front(t_list **begin_list, void *data)
+void	ft_list_foreach_if(t_list *begin_list, void (*f)(void *),
+		void *data_ref, int (*cmp)())
 {
-	t_list *new_elem;
+	t_list *buf;
 
-	new_elem = ft_create_elem(data);
-	new_elem->next = *begin_list;
-	*begin_list = new_elem;
+	buf = begin_list;
+	while (buf->next)
+	{
+		if ((*cmp)(buf->data, data_ref) == 0)
+			(*f)(buf->data);
+		buf = buf->next;
+	}
+	if ((*cmp)(buf->data, data_ref) == 0)
+		(*f)(buf->data);
 }
