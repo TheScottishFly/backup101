@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_size.c                                     :+:      :+:    :+:   */
+/*   ft_list.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/19 07:39:22 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/20 15:18:09 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/18 13:58:45 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/18 14:53:07 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#ifndef FT_LIST_H
+# define FT_LIST_H
 
-int		ft_list_size(t_list *begin_list)
+typedef struct	s_list
 {
-	int		i;
-	t_list	*buf;
+	void			*data;
+	struct s_list	*next;
 
-	i = 0;
-	buf = begin_list;
-	while (buf->next)
-	{
-		i++;
-		buf = buf->next;
-	}
-	i++;
-	return (i);
-}
+}				t_list;
+
+#endif

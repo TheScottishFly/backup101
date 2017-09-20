@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 15:55:23 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/19 17:11:17 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/20 15:55:40 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,6 @@ struct s_stock_par	*ft_param_to_tab(int ac, char **av)
 		tab[i].tab = ft_split_whitespaces(tab[i].copy);
 		i++;
 	}
-	tab[i].str = 0;
+	tab[i].str = NULL;
 	return (tab);
 }

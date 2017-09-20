@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_size.c                                     :+:      :+:    :+:   */
+/*   ft_map.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/19 07:39:22 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/20 15:18:09 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/20 15:31:17 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/20 15:36:25 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
+#include <stdlib.h>
 
-int		ft_list_size(t_list *begin_list)
+int	*ft_map(int *tab, int length, int (*f)(int))
 {
-	int		i;
-	t_list	*buf;
+	int *tab2;
+	int i;
 
+	tab2 = malloc(length * sizeof(int));
 	i = 0;
-	buf = begin_list;
-	while (buf->next)
+	while (i < length)
 	{
+		tab2[i] = (*f)(tab[i]);
 		i++;
-		buf = buf->next;
 	}
-	i++;
-	return (i);
+	return (tab2);
 }

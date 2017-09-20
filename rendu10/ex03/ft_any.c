@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_size.c                                     :+:      :+:    :+:   */
+/*   ft_any.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/19 07:39:22 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/20 15:18:09 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/20 15:38:17 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/20 15:43:26 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-
-int		ft_list_size(t_list *begin_list)
+int	ft_any(char **tab, int (*f)(char*))
 {
+	char	*buf;
 	int		i;
-	t_list	*buf;
 
-	i = 0;
-	buf = begin_list;
-	while (buf->next)
+	buf = *tab;
+	while (*buf != 0)
 	{
+		if ((*f)(buf) == 1)
+			return (1);
 		i++;
-		buf = buf->next;
 	}
-	i++;
-	return (i);
+	return (0);
 }

@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_size.c                                     :+:      :+:    :+:   */
+/*   ft_list_merge.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/19 07:39:22 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/20 15:18:09 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/20 11:21:32 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/20 11:27:08 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-int		ft_list_size(t_list *begin_list)
+void	*ft_list_merge(t_list **begin_list, t_list **begin_list2)
 {
-	int		i;
-	t_list	*buf;
+	t_list *buf;
+	t_list *buf2;
 
-	i = 0;
-	buf = begin_list;
+	buf = *begin_list;
+	buf2 = *begin_list2;
 	while (buf->next)
-	{
-		i++;
 		buf = buf->next;
+	while (buf2->next)
+	{
+		buf->next = buf2;
+		buf = buf2;
+		buf2 = buf->next;
 	}
-	i++;
-	return (i);
+	buf->next = buf2;
 }

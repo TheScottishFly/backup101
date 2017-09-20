@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_size.c                                     :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/09/19 07:39:22 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/20 15:18:09 by grosnet-         ###   ########.fr       */
+/*   Created: 2017/09/20 15:09:51 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/20 15:30:26 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_list.h"
-
-int		ft_list_size(t_list *begin_list)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
-	int		i;
-	t_list	*buf;
+	int i;
 
 	i = 0;
-	buf = begin_list;
-	while (buf->next)
+	while (i < length)
 	{
+		(*f)(tab[i]);
 		i++;
-		buf = buf->next;
 	}
-	i++;
-	return (i);
 }
