@@ -6,11 +6,12 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/12 20:23:11 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/20 10:44:16 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/20 10:50:13 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <stdio.h>
 
 int		ft_argvlen(char **argv)
 {
@@ -47,17 +48,21 @@ char	*ft_concat_params(int argc, char **argv)
 		j = 0;
 		while (argv[i][j])
 		{
-			str[k] = argv[i][j];
-			j++;
-			k++;
+			str[k++] = argv[i][j++];
 		}
 		if (argc > 2)
-			str[k] = '\n';
+			str[k++] = '\n';
 		else
-			str[k] = '\0';
+			str[k++] = '\0';
 		i++;
-		k++;
 		argc--;
 	}
 	return (str);
+}
+
+int main(int argc, char *argv[])
+{
+	char *str = ft_concat_params(argc, argv);
+	printf("%s", str);
+	return (0);
 }
