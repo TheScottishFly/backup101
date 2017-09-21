@@ -16,10 +16,15 @@
 
 void	ft_putstr(char *str)
 {
-	while (*str)
+	int i;
+	
+	i = 0;
+	while (str[i])
+		i++;
+	while (i > -1)
 	{
-		write(1, str, 1);
-		str++;
+		write(1, &str[i], 1);
+		i--;
 	}
 }
 
@@ -38,7 +43,7 @@ void	dispatch(int a, char c, int b)
 		ft_putstr(ft_itoa(ftab[1](a, b), str));
 	else if (c == '*')
 		ft_putstr(ft_itoa(ftab[2](a, b), str));
-	else if (c == '-')
+	else if (c == '/')
 		ft_putstr(ft_itoa(ftab[3](a, b), str));
 }
 
@@ -46,20 +51,19 @@ int		main(int argc, char *argv[])
 {
 	int a;
 	int b;
-	char str[12];
 
 	a = 0;
 	b = 0;
 	if (argc == 4)
 	{
-		if (is_operator(argv[2][0]))
+		if (is_operator(argv[2][0]) && !argv[2][1])
 		{
 			a = ft_atoi(argv[1]);
 			b = ft_atoi(argv[3]);
 			dispatch(a, argv[2][0], b);
 		}
 		else
-			ft_putstr(ft_itoa(0, str));
+			ft_putstr("0");
 	}
 	return (0);
 }

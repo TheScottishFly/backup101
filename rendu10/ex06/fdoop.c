@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+
 int		is_operator(char c)
 {
 	if (c != '+' && c != '-' && c != '*' && c != '/')
@@ -36,7 +38,7 @@ int		ft_atoi(char *str)
 	}
 	while (*str >= 48 && *str <= 57)
 	{
-		nb = nb * 10 + *str - '0';
+		nb = (nb * 10) + (*str - '0');
 		str++;
 	}
 	if (neg == 1)
@@ -44,50 +46,28 @@ int		ft_atoi(char *str)
 	return (nb);
 }
 
-int		count_diz(int nb)
+char 	*ft_itoa(int nb, char* str)
 {
-	int i;
-
-	if (nb >= 10)
-		i = 1;
-	else
-		nb = 0;
-	if (nb < 0)
-		nb = -nb;
-	if (nb == 0 || nb == 1)
-		i = 1;
-	while (nb > 1)
-	{
-		nb /= 10;
-		i++;
-	}
-	return (i);
-}
-
-char	*ft_itoa(int nb, char *str)
-{
-	int i;
-	int j;
-	int neg;
-
-	i = count_diz(nb);
-	j = i - 1;
+    int i;
+    int neg;
+ 
+	i = 0;
 	neg = 0;
-	if (nb < 0)
-	{
-		nb = -nb;
-		neg = 1;
-		j++;
-		i++;
-	}
-	while (nb >= 10)
-	{
-		str[j--] = nb % (nb / 10) + '0';
-		nb /= 10;
-	}
-	if (neg == 1)
-		str[0] = '-';
-	str[j--] = nb + '0';
-	str[i] = '\0';
-	return (str);
+    if (nb < 0)
+    {
+        neg = 1;
+        nb = -nb;
+    }
+    while (nb != 0)
+    {
+		if (nb < 10)
+			str[i++] = nb + '0';
+		else
+			str[i++] = (nb % 10) + '0';
+        nb /= 10;
+    }
+    if (neg == 1)
+        str[i++] = '-';
+    str[i] = '\0';
+    return (str);
 }
