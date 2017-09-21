@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 13:28:16 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/19 13:55:09 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/21 15:09:04 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void	ft_list_clear(t_list **begin_list)
 	t_list *next;
 
 	buf = *begin_list;
-	if (buf->next)
+	if (buf != NULL)
 	{
 		next = buf->next;
 		ft_list_clear(&next);
 	}
 	else
-		next = 0;
+		next = NULL;
 	free(buf);
-	*begin_list = 0;
+	*begin_list = NULL;
 }
