@@ -56,6 +56,7 @@ int		main(int argc, char *argv[])
 		}
 		else
 			ft_putnbr(0);
+		ft_putstr("\n");
 	}
 	return (0);
 }
