@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 12:58:12 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/21 13:04:27 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/21 14:54:21 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 char	is_operator(char c);
 int		ft_atoi(char *str);
-char	*ft_itoa(int nb);
+char	*ft_itoa(int nb, char *str);
 
 #endif

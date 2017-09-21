@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 08:31:58 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/21 14:49:21 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/21 14:57:26 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,19 @@ void	dispatch(int a, char c, int b)
 {
 	int		(*ftab[4])(int, int);
 	char	str[12];
-	int i;
 
 	ftab[0] = sum;
 	ftab[1] = sub;
 	ftab[2] = mul;
 	ftab[3] = div;
 	if (c == '+')
-		ft_itoa(ftab[0](a, b), str);
+		ft_putstr(ft_itoa(ftab[0](a, b), str));
 	else if (c == '-')
-		ft_itoa(ftab[1](a, b), str);
+		ft_putstr(ft_itoa(ftab[1](a, b), str));
 	else if (c == '*')
-		ft_itoa(ftab[2](a, b), str);
+		ft_putstr(ft_itoa(ftab[2](a, b), str));
 	else if (c == '-')
-		ft_itoa(ftab[3](a, b), str);
-	ft_putstr(str);
+		ft_putstr(ft_itoa(ftab[3](a, b), str));
 }
 
 int		main(int argc, char *argv[])
