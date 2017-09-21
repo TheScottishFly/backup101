@@ -6,13 +6,11 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 09:28:23 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/19 13:22:46 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/21 12:15:04 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
-
-t_list	*ft_create_elem(void *data);
 
 t_list	*ft_list_push_params(int ac, char **av)
 {

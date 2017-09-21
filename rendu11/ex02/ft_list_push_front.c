@@ -6,13 +6,11 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 07:33:58 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/20 08:01:44 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/21 12:15:30 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
-
-t_list	*ft_create_elem(void *data);
 
 void	ft_list_push_front(t_list **begin_list, void *data)
 {

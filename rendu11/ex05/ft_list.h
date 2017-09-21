@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/18 13:58:45 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/18 14:53:07 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/21 12:15:55 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,7 @@ typedef struct	s_list
 	struct s_list	*next;
 
 }				t_list;
+
+t_list			*ft_create_elem(void *data);
 
 #endif

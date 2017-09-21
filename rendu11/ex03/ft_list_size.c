@@ -6,11 +6,10 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/19 07:39:22 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/21 15:08:22 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/20 15:18:09 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "ft_list.h"
 
 int		ft_list_size(t_list *begin_list)
@@ -20,7 +19,7 @@ int		ft_list_size(t_list *begin_list)
 
 	i = 0;
 	buf = begin_list;
-	while (buf != NULL)
+	while (buf->next)
 	{
 		i++;
 		buf = buf->next;
