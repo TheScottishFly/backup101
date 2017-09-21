@@ -10,41 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "fcalc.h"
 #include "fdoop.h"
 
-void	ft_putstr(char *str)
-{
-	int i;
-	
-	i = 0;
-	while (str[i])
-		i++;
-	while (i > -1)
-	{
-		write(1, &str[i], 1);
-		i--;
-	}
-}
-
 void	dispatch(int a, char c, int b)
 {
-	int		(*ftab[4])(int, int);
-	char	str[12];
+	int		(*ftab[5])(int, int);
 
 	ftab[0] = sum;
 	ftab[1] = sub;
 	ftab[2] = mul;
 	ftab[3] = div;
+	ftab[4] = mod;
 	if (c == '+')
-		ft_putstr(ft_itoa(ftab[0](a, b), str));
+		ft_putnbr(ftab[0](a, b));
 	else if (c == '-')
-		ft_putstr(ft_itoa(ftab[1](a, b), str));
+		ft_putnbr(ftab[1](a, b));
 	else if (c == '*')
-		ft_putstr(ft_itoa(ftab[2](a, b), str));
+		ft_putnbr(ftab[2](a, b));
 	else if (c == '/')
-		ft_putstr(ft_itoa(ftab[3](a, b), str));
+		ft_putnbr(ftab[3](a, b));
+	else if (c == '%')
+		ft_putnbr(ftab[4](a, b));
 }
 
 int		main(int argc, char *argv[])
@@ -60,10 +47,15 @@ int		main(int argc, char *argv[])
 		{
 			a = ft_atoi(argv[1]);
 			b = ft_atoi(argv[3]);
-			dispatch(a, argv[2][0], b);
+			if (argv[2][0] == '/' && b == 0)
+				ft_putstr("Stop : division by zero");
+			else if (argv[2][0] == '%' && b == 0)
+				ft_putstr("Stop : modulo by zero");
+			else
+				dispatch(a, argv[2][0], b);
 		}
 		else
-			ft_putstr("0");
+			ft_putnbr(0);
 	}
 	return (0);
 }

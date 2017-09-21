@@ -15,6 +15,7 @@
 
 char	is_operator(char c);
 int		ft_atoi(char *str);
-char	*ft_itoa(int nb, char *str);
+void	ft_putnbr(int nb);
+void	ft_putstr(char *str);
 
 #endif

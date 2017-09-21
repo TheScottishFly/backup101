@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <stdio.h>
 
 int		is_operator(char c)
 {
-	if (c != '+' && c != '-' && c != '*' && c != '/')
+	if (c != '+' && c != '-' && c != '*' && c != '/' && c != '%')
 		return (0);
 	return (1);
 }
@@ -46,28 +47,34 @@ int		ft_atoi(char *str)
 	return (nb);
 }
 
-char 	*ft_itoa(int nb, char* str)
+void	ft_putnbr(int nb)
 {
-    int i;
-    int neg;
- 
-	i = 0;
-	neg = 0;
-    if (nb < 0)
-    {
-        neg = 1;
-        nb = -nb;
-    }
-    while (nb != 0)
-    {
-		if (nb < 10)
-			str[i++] = nb + '0';
-		else
-			str[i++] = (nb % 10) + '0';
-        nb /= 10;
-    }
-    if (neg == 1)
-        str[i++] = '-';
-    str[i] = '\0';
-    return (str);
+	char c;
+	
+	(void)c;
+	if (nb < 0)
+	{
+		write(1, "-", 1);
+		nb *= -1;
+	}
+	if (nb >= 10)
+	{
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
+	}
+	else
+	{
+		c = nb + '0';
+		write(1, &c, 1);
+	}
+}
+
+void	ft_putstr(char *str)
+{
+	while (*str)
+	{
+		write(1, str, 1);
+		str++;
+	}
+	write(1, "\n", 1);
 }
