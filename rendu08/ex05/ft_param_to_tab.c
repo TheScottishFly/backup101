@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 15:55:23 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/20 15:55:40 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/21 07:14:14 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ struct s_stock_par	*ft_param_to_tab(int ac, char **av)
 
 	tab = (t_stock_par*)malloc(sizeof(tab) * (ac + 1));
 	i = 0;
-	while (i < size)
+	while (i < ac)
 	{
 		tab[i].size_param = ft_strlen(av[i]);
 		tab[i].str = av[i];
