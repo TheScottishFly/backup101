@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 13:02:59 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/21 14:12:27 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/21 14:46:48 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int		ft_atoi(char *str)
 	int nb;
 	int neg;
 
+	neg = 0;
 	nb = 0;
 	while (*str <= 32)
 		str++;
@@ -47,7 +48,7 @@ int		count_diz(int nb)
 {
 	int i;
 
-	i = 0;
+	i = 1;
 	if (nb < 0)
 		nb = -nb;
 	if (nb == 0 || nb == 1)
@@ -76,7 +77,7 @@ char	*ft_itoa(int nb, char *str)
 		j++;
 		i++;
 	}
-	while (nb > 10)
+	while (nb >= 10)
 	{
 		str[j--] = nb % (nb / 10) + '0';
 		nb /= 10;
