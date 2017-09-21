@@ -46,7 +46,8 @@ void	ft_list_sort(t_list **begin_list, int (*cmp)())
 		else
 		{
 			next = buf;
-			buf = buf->next ? buf->next : buf;
+			if (buf->next)
+				buf = buf->next;
 		}
 	}
 }
