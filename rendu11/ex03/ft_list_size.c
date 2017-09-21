@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <libstd.h>
 #include "ft_list.h"
 
 int		ft_list_size(t_list *begin_list)
@@ -17,13 +18,14 @@ int		ft_list_size(t_list *begin_list)
 	int		i;
 	t_list	*buf;
 
-	i = 0;
+	i = 1;
 	buf = begin_list;
+	if (buf == NULL)
+		return (0);
 	while (buf->next)
 	{
 		i++;
 		buf = buf->next;
 	}
-	i++;
 	return (i);
 }
