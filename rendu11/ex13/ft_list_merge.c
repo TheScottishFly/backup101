@@ -6,13 +6,13 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/20 11:21:32 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/20 11:27:08 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/21 07:30:04 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-void	*ft_list_merge(t_list **begin_list, t_list **begin_list2)
+void	ft_list_merge(t_list **begin_list, t_list **begin_list2)
 {
 	t_list *buf;
 	t_list *buf2;
