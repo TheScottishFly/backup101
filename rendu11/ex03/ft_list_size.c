@@ -18,10 +18,12 @@ int		ft_list_size(t_list *begin_list)
 	int		i;
 	t_list	*buf;
 
-	i = 1;
+	i = 0;
 	buf = begin_list;
 	if (buf == NULL)
 		return (0);
+	else
+		i = 1;
 	while (buf->next)
 	{
 		i++;

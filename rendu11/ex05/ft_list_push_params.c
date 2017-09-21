@@ -10,20 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "ft_list.h"
 
 t_list	*ft_list_push_params(int ac, char **av)
 {
-	t_list *first;
-	t_list *cursor;
+	t_list	*list;
+	t_list	*buf;
+	int		i;
 
-	ac--;
-	first = ft_create_elem(&av[ac--]);
-	cursor = first;
-	while (ac > 0)
+	buf = NULL;
+	list = NULL;
+	i = 0;
+	while (i < ac)
 	{
-		cursor->next = ft_create_elem(&av[ac--]);
-		cursor = cursor->next;
+		list = ft_create_elem(av[i]);
+		list->next = buf;
+		buf = list;
+		i++;
 	}
-	return (first);
+	return (list);
 }
