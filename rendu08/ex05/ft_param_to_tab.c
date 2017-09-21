@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/15 15:55:23 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/21 08:35:56 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/21 08:52:40 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int					ft_strlen(char *str)
 	return (len);
 }
 
-char	*ft_strdup(char *str)
+char				*ft_strdup(char *str)
 {
 	char	*new_str;
 	int		length;
