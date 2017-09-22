@@ -49,6 +49,7 @@ void ft_tail(char *file, int buf_size)
 		cursor++;
 	}
 	close(fd);
+	buf[32000];
 }
 
 int main(int argc, char *argv[])
@@ -67,12 +68,15 @@ int main(int argc, char *argv[])
 	{
 		while (argv[i][j] != '\0')
 			j++;
-		write(1, "==> ", 5);
-		write(1, argv[i], j);
-		write(1, " <==\n", 6);
+		if (argc > 4)
+		{
+			write(1, "==> ", 5);
+			write(1, argv[i], j);
+			write(1, " <==\n", 6);
+		}
 		ft_tail(argv[i], ft_atoi(argv[2]));
 		if (i < (argc - 1))
-		write(1, "\n", 1);
+			write(1, "\n", 1);
 		j = 0;
 		i++;
 	}
