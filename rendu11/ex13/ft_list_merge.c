@@ -17,6 +17,7 @@ void	ft_list_merge(t_list **begin_list1, t_list *begin_list2)
 {
 	t_list *buf;
 
+	buf = NULL;
 	if (begin_list1 != NULL)
 	{
 		buf = *begin_list1;
@@ -24,4 +25,6 @@ void	ft_list_merge(t_list **begin_list1, t_list *begin_list2)
 			buf = buf->next;
 		buf->next = begin_list2;
 	}
+	else
+		*begin_list1 = begin_list2;
 }

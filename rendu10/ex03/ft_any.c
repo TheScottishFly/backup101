@@ -10,16 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_any(char **tab, int (*f)(char*))
+int		ft_any(char **tab, int (*f)(char*))
 {
-	char	*buf;
 	int		i;
 
-	buf = *tab;
 	i = 0;
-	while (buf[i])
+	while (tab[i])
 	{
-		if ((*f)(&buf[i]) == 1)
+		if ((*f)(tab[i]) == 1)
 			return (1);
 		i++;
 	}

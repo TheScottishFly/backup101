@@ -12,16 +12,14 @@
 
 int	ft_count_if(char **tab, int (*f)(char*))
 {
-	char	*buf;
 	int		i;
 	int		c;
 
-	buf = *tab;
 	i = 0;
 	c = 0;
-	while (buf[i])
+	while (tab[i])
 	{
-		if ((*f)(&buf[i]) == 1)
+		if ((*f)(tab[i]) == 1)
 			c++;
 		i++;
 	}
