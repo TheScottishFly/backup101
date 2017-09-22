@@ -47,14 +47,23 @@ int		ft_atoi(char *str)
 	return (nb);
 }
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
 void	ft_putnbr(int nb)
 {
-	char c;
-
-	(void)c;
+	if (nb == -2147483648)
+	{
+		ft_putchar('-');
+		ft_putchar('2');
+		ft_putnbr(147483648);
+		return ;
+	}
 	if (nb < 0)
 	{
-		write(1, "-", 1);
+		ft_putchar('-');
 		nb *= -1;
 	}
 	if (nb >= 10)
@@ -63,10 +72,7 @@ void	ft_putnbr(int nb)
 		ft_putnbr(nb % 10);
 	}
 	else
-	{
-		c = nb + '0';
-		write(1, &c, 1);
-	}
+		ft_putchar(nb + '0');
 }
 
 void	ft_putstr(char *str)
