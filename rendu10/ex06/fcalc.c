@@ -6,7 +6,7 @@
 /*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/21 12:59:16 by grosnet-          #+#    #+#             */
-/*   Updated: 2017/09/21 13:04:15 by grosnet-         ###   ########.fr       */
+/*   Updated: 2017/09/22 06:49:30 by grosnet-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		mul(int a, int b)
 	return (a * b);
 }
 
-int mod(int a, int b)
+int		mod(int a, int b)
 {
 	return (a % b);
 }
