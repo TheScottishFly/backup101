@@ -4,13 +4,13 @@ SRCS = ft_display_file.c
 all : $(NAME)
 
 $(NAME) : $(SRCS)
-	gcc -c -Wall -Wextra -Werror $(SRCS)
+	gcc -c $(SRCS)
 	gcc -o $(NAME) ft_display_file.o
 
 clean :
 	/bin/rm -f ft_display_file.o
 
-flcean : clean
+fclean : clean
 	/bin/rm -f $(NAME)
 
 re : fclean all
