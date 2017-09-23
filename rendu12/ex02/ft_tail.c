@@ -2,6 +2,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 int		ft_atoi(char *str)
 {
@@ -33,23 +34,21 @@ int		ft_atoi(char *str)
 void ft_tail(char *file, int buf_size)
 {
 	int fd;
-	char buf[32000];
+	char *buf;
 	int f_size;
 	int cursor;
-	
+
+	buf = malloc(sizeof(char) * 32000);
 	fd = open(file, O_RDONLY);
 	f_size = read(fd, buf, 32000);
-	if (buf_size > f_size)
-		cursor = 0;
-	else
-		cursor = f_size - buf_size;
+	cursor = f_size - buf_size;
 	while (buf[cursor])
 	{
 		write(1, &buf[cursor], 1);
 		cursor++;
 	}
+	free(buf);
 	close(fd);
-	buf[32000];
 }
 
 int main(int argc, char *argv[])
