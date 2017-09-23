@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_display_file.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 06:09:24 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/23 06:10:26 by grosnet-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
 
-int main(int argc, char *argv[])
+int		main(int argc, char *argv[])
 {
-	int fd;
-	char buf;
-	
+	int		fd;
+	char	buf;
+
 	if (argc != 2)
 	{
 		if (argc < 2)

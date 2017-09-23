@@ -1,13 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_cat.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 06:09:34 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/23 06:10:57 by grosnet-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
 
-int main(int argc, char *argv[])
+int		main(int argc, char *argv[])
 {
-	int fd;
-	char buf;
-	
+	int		fd;
+	char	buf;
+
 	if (argc < 2)
 	{
 		write(2, "File name missing.\n", 19);
@@ -24,6 +36,6 @@ int main(int argc, char *argv[])
 		}
 		close(fd);
 		argv++;
-	 }
+	}
 	return (0);
 }

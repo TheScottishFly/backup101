@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_tail.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: grosnet- <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2017/09/23 06:09:39 by grosnet-          #+#    #+#             */
+/*   Updated: 2017/09/23 06:14:14 by grosnet-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -31,12 +43,12 @@ int		ft_atoi(char *str)
 	return (nb);
 }
 
-void ft_tail(char *file, int buf_size)
+void	ft_tail(char *file, int buf_size)
 {
-	int fd;
-	char *buf;
-	int f_size;
-	int cursor;
+	int		fd;
+	char	*buf;
+	int		f_size;
+	int		cursor;
 
 	buf = malloc(sizeof(char) * 32000);
 	fd = open(file, O_RDONLY);
@@ -51,13 +63,25 @@ void ft_tail(char *file, int buf_size)
 	close(fd);
 }
 
-int main(int argc, char *argv[])
+void	printf_header(char *str)
+{
+	int j;
+
+	j = 0;
+	while (str[j] != '\0')
+		j++;
+	write(1, "==> ", 5);
+	write(1, str, j);
+	write(1, " <==\n", 6);
+}
+
+int		main(int argc, char *argv[])
 {
 	int i;
 	int j;
-	
+
 	i = 3;
-	j = 0;	
+	j = 0;
 	if (argc < 4)
 	{
 		write(2, "Argument required\n", 18);
@@ -65,14 +89,8 @@ int main(int argc, char *argv[])
 	}
 	while (i < argc)
 	{
-		while (argv[i][j] != '\0')
-			j++;
 		if (argc > 4)
-		{
-			write(1, "==> ", 5);
-			write(1, argv[i], j);
-			write(1, " <==\n", 6);
-		}
+			printf_header(argv[i]);
 		ft_tail(argv[i], ft_atoi(argv[2]));
 		if (i < (argc - 1))
 			write(1, "\n", 1);
